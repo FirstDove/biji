@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="Generator" content="EditPlus®">
+		<meta name="Author" content="">
+		<meta name="Keywords" content="">
+		<meta name="Description" content="">
+		<title>Document</title>
+	</head>
+	<body>
+		<div class="row">
+        <div class="col-sm-6 col-sm-push-3">
+            <div class="ibox float-e-margins">
+                <div class="ibox-content">
+                    <form class="form-horizontal" name="svDetalForm"  enctype="multipart/form-data">
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">服务详情类别：</label>
+                            <div class="col-sm-8 selectFrame">
+                                <select name="svDetalSelect" id="svDetalSelect" aria-label="<%=data.sc_id%>">
+                                    <%for(var i = 0;i < scData.length;i++){%>
+                                        <option value="<%=scData[i].sc_id%>"><%=scData[i].sc_name%></option>
+                                    <%}%>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">服务详情名称：</label>
+                            <div class="col-sm-8">
+                                <input type="text" name="sdName" placeholder="服务详情名称"
+                                       class="form-control" value="<%=data.sd_name%>">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">服务详情图片：</label>
+                            <div class="col-sm-8 ImgFrame">
+                                <div class="ImgPreview">
+                                    <img class="ImgFirstSrc" src="<%=data.sd_img%>" alt="未选择图片">
+                                </div>
+                                <!--<img src="ftp://127.0.0.1/c:\Users\刘德福\Desktop\项目\项目三\头像\u=4250696313,681315509&fm=27&gp=0.jpg" alt="图片加载中">-->
+                                <input type="file" class="img-btn" name="sdImg" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">服务详情简介：</label>
+                            <div class="col-sm-8 briefFrame">
+                                <textarea name="sdBrief" id="sdBrief"><%=data.sd_brief%></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">服务详情详介：</label>
+                            <div class="col-sm-8 detailFrame">
+                                <textarea name="sdDetails"><%=data.sd_details%></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">服务状态：</label>
+                            <div class="col-sm-8 selectFrameTwo">
+                                <select name="sdState" size="1" style="width: 100px;height: 25px;">
+                                    <%if(data.sd_state==0){%>
+                                    <option value="0" selected="selected">0</option>
+                                    <option value="1">1</option>
+                                    <%}else if( data.sd_state == 1 ){%>//如果是有关联的js语句，请写在一个<%%>内
+                                    <option value="0">0</option>
+                                    <option value="1" selected="selected">1</option>
+                                    <%}%>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-offset-3 col-sm-8 btnFrame">
+                                <button class="btn btn-sm btn-info sub-btn" type="button">提 交</button>
+                                <button class="btn btn-sm btn-default" type="button" onclick="cancelSv();">取消</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+	</body>
+</html>
