@@ -13,6 +13,9 @@ function sendReq() {
 			console.log(data);
 		}
 	};
-	xhl.open('POST','http://127.0.0.1:8080/',false);
+	xhl.open('POST','http://127.0.0.1:8080/pk/bbb',false);
+	xhl.setRequestHeader("Content-type","application/json");
+	// xhl.withCredentials = true; //支持跨域发送cookies
 	xhl.send(JSON.stringify(obj));
 }
+
