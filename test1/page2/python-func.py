@@ -21,7 +21,7 @@ fo.close()
 
 
 class Ad():
-    @staticmethod  # 声明该方法是静态方法  可以 Ad.acd()  也可以 Ad().acd()
+    @staticmethod  # 声明该方法是静态方法  可以 Ad.acd()  也可以 Ad().acd()  静态方法（不需要实例化类就可以被类本身调用）
     def acd():
         print 'static'
 
@@ -82,3 +82,25 @@ print "int('0110', 2)--->", int('0110', 2)
 # chr(x)   返回x对应的ASCII字符串    x(整数)         例子： chr(97)  --->  'a'
 # unichr(x)   返回x对应的Unicode对象    x(整数)         例子： chr(97)  --->  u'a'
 # ord(str)   返回str字符（长度为1的字符串）对应的数字        例子： ord('a')  --->  97   /   ord(u'a')  --->  97
+
+# oct() 函数将一个整数转换成8进制字符串。
+# oct(x)
+#    x -- 整数。
+print '---------oct-----------'
+print 'oct(10)--->', oct(10)
+print 'oct(50)--->', oct(50)
+print 'oct(72)--->', oct(72)
+print 'oct(8)--->', oct(8), type(oct(8))
+
+# hex() 函数用于将10进制整数转换成16进制，以字符串形式表示。
+# hex(x)
+#    x -- 10进制整数
+# 返回16进制数，以字符串形式表示。
+print '---------hex-----------'
+print 'hex(10)--->', hex(10)
+print 'hex(50)--->', hex(50)
+print 'hex(72)--->', hex(int('0110', 8))
+print 'hex(72)--->', hex(72)
+print 'hex(8)--->', hex(8), type(hex(8))
+
+
